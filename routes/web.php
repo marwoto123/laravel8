@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Models\Post;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -35,33 +36,11 @@ Route::get('/about', function () {
 });
 
 
-
-Route::get('/posts', function () {
-
-    return view('posts',[
-
-        "title" =>"posts",
-
-        "posts" => Post::all()
-        
-    ]);
-});
-
-
-
-
+// halaman post
+Route::get('/posts', [PostController::class, 'index'] );
 
 // halaman singgel post
-Route::get('posts/{slug}' , function($slug) {
-
-    return view('post' , [
-
-        "title" => "singel post",
-
-        "post" => Post::find($slug)
-
-    ]);
-});
+Route::get('posts/{slug}' ,[Postcontroller::class, 'show']);
 
 
 
