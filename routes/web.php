@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Post;
 
 
 /*
@@ -36,34 +36,13 @@ Route::get('/about', function () {
 
 
 
-
-
-
 Route::get('/posts', function () {
 
-                $blog_posts = [
-                    [
-                        "title" => "judul pertama",
-                        "slug" => "judul-pertama",
-                        "author" => "sandika",
-                        "body" => "Lorem Ipsum is simply dummy text of the printing and 
-                        typesetting industry. Lorem Ipsum has been the indust
-                        ext ever since the 1500s, when an unknown printer took "             
-                    ],
-                    [
-                        "title" => "judul kedua",
-                        "slug" => "judul-kedua",
-                        "author" => "jono",
-                        "body" => "Lorem Ipsum is simply dummy text of the printing and 
-                        typesetting industry. Lorem Ipsum has been the indust
-                        xt ever since the 1500s, when an unknown printer took "            
-                    ],                  
-                ];
-
     return view('posts',[
+
         "title" =>"posts",
-        "posts" => $blog_posts
-        // $blog_posts
+
+        "posts" => Post::all()
         
     ]);
 });
@@ -75,36 +54,12 @@ Route::get('/posts', function () {
 // halaman singgel post
 Route::get('posts/{slug}' , function($slug) {
 
-    $blog_posts = [
-                [
-                    "title" => "judul pertama",
-                    "slug" => "judul-pertama",
-                    "author" => "sandika",
-                    "body" => "Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the indust
-                    ext ever since the 1500s, when an unknown printer took "             
-                ],
-                [
-                    "title" => "judul kedua",
-                    "slug" => "judul-kedua",
-                    "author" => "jono",
-                    "body" => "Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the indust
-                    xt ever since the 1500s, when an unknown printer took "            
-                ]                  
-                ];
-
-
-            $new_post = [];
-                    foreach($blog_posts as $post){
-                        if($post["slug"] === $slug){
-                            $new_post = $post;
-                        }
-                    }
-
     return view('post' , [
+
         "title" => "singel post",
-        "post" => $new_post
+
+        "post" => Post::find($slug)
+
     ]);
 });
 
