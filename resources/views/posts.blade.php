@@ -3,24 +3,13 @@
 {{-- @dd($posts) --}}
 {{-- @dd($posts) --}}
 @section('container')
-     
-        @foreach($posts as $post)
-          <article class="mb-10">
-                <h2> 
-                  <a href="/posts/{{ $post["slug"] }}">{{ $post["title"] }} </a>
-                </h2>
-                
-                </h2>
+<h1 class="mb-5">Halaman Blog</h1>
 
-                <h2> {{ $post["author"] }}</h2>
-                <h5> {{ $post["author"] }}</h5>
-                <p> {{ $post["body"] }}</p>
-
-          </article>
-        @endforeach
-
+    @foreach ($posts as $post)
+        <article class="mb-10">
+            <h3> <a href="/posts/{{ $post->id }}">{{ $post->title }} </a></h3>
+            <p> {{ $post->body }}</p>
+        </article>
+    @endforeach
 
 @endsection
-
-
-
