@@ -40,7 +40,7 @@ Route::get('/about', function () {
 Route::get('/posts', [PostController::class, 'index'] );
 
 // halaman singgel post
-Route::get('posts/{slug}' ,[Postcontroller::class, 'show']);
+Route::get('posts/{post:slug}' ,[Postcontroller::class, 'show']);
 
 
 
