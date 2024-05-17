@@ -36,3 +36,29 @@ Post::create([
 
 ])
 
+*************************categoryyy************************************************
+$category = new Category
+$category->name = 'Programing'
+$category->slug = 'programing'
+$category->save()
+
+Category::create([
+    'name' => 'personal',
+    'slug' => 'personal'
+])
+
+Category::all()
+Post::where('category_id',2)->get()
+
+Post::create([
+'title' => 'judul tiga',
+'category_id' => 3,
+'slug'  => 'judul-tiga',
+'excerpt' => 'sIt is a long established fact that a 
+              distracted by the readable content of a page ',
+
+'body' => 'It is a long established fact <p>that a reader will be distracted by 
+          the readable content of a page when 
+          looking at its layout. The </p>'  
+
+])
