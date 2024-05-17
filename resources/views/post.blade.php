@@ -4,8 +4,8 @@
 @section('container')
     <article class="mb-10">
 
-        <h2> {{ $post['author'] }}</h2>
-        <h5> {{ $post['author'] }}</h5>
-        <p> {{ $post['body'] }}</p>
+        <h2> {{ $post->title }}</h2>
+        {!! $post->body !!}
+      {{-- {!! $post->body !!} --}}
     </article>
 @endsection
