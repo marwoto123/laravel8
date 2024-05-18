@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       
+
 
         // User::create([
         //     'name' => 'sandika',
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('hamzah'),
         //     'name' => 'hamzah'
         // ]);
-        User::factory(5)->create();
+        User::factory(3)->create();
         Category::create([
             'name' => 'web programing',
             'slug' => 'web-programing',
