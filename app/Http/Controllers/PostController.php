@@ -10,7 +10,7 @@ class PostController extends Controller
     public function index()
     {
         return view('posts',[
-            "title" =>"posts",
+            "title" =>"All post",
             "posts" => Post::all()
             
         ]);
