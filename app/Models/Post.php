@@ -15,6 +15,11 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     
 }
 // $fillable (yang boleh di isi manual sisanya otomatis)

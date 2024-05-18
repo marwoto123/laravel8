@@ -7,6 +7,5 @@
         <h3> nama: {{ $name }}</h3>
         <p>email: {{ $email }}</p>
         <img src="img/{{ $image }}" alt="{{ $email }}"width="200"class="img-thumbnail rounded-circle">
-
      
 @endsection
