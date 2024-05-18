@@ -8,7 +8,7 @@
         <article class="mb-5 border-bottom">
             <h3> <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }} </a></h3>
             <p>by.
-                <a href="">{{ $post->user->name }}</a>
+                <a href=""class="text-decoration-none">{{ $post->user->name }}</a>
                 <a href="/categories/{{ $post->category->slug }}"class="text-decoration-none">{{ $post->category->name }}</a>
             </p>
 
