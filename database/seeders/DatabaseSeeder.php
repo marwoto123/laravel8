@@ -31,11 +31,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'hamzah'
         // ]);
         User::factory(3)->create();
+
         Category::create([
-            'name' => 'web programing',
-            'slug' => 'web-programing',
+            'name' => 'programing',
+            'slug' => 'programing',
 
         ]);
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
+
+        ]);
+
         Category::create([
             'name' => 'personal',
             'slug' => 'personal'
