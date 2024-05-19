@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-{{-- @dd($posts) --}}
 @section('container')
     <h1 class="mb-5">{{ $title }}</h1>
 
